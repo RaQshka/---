@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\bin\Debug\net7.0\Метод Фибоначчи.exe
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\bin\Debug\net7.0\Метод Фибоначчи.deps.json
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\bin\Debug\net7.0\Метод Фибоначчи.runtimeconfig.json
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\bin\Debug\net7.0\Метод Фибоначчи.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\bin\Debug\net7.0\Метод Фибоначчи.pdb
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.AssemblyInfo.cs
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\refint\Метод Фибоначчи.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.pdb
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\Метод Фибоначчи.genruntimeconfig.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод Фибоначчи\obj\Debug\net7.0\ref\Метод Фибоначчи.dll

@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\bin\Debug\net6.0\Метод половинного деления.exe
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\bin\Debug\net6.0\Метод половинного деления.deps.json
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\bin\Debug\net6.0\Метод половинного деления.runtimeconfig.json
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\bin\Debug\net6.0\Метод половинного деления.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\bin\Debug\net6.0\Метод половинного деления.pdb
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.AssemblyInfo.cs
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\refint\Метод половинного деления.dll
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.pdb
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\Метод половинного деления.genruntimeconfig.cache
+C:\Users\User\source\repos\Решение матриц методом Жордана-Гаусса\Метод половинного деления\obj\Debug\net6.0\ref\Метод половинного деления.dll
