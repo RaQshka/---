@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Решение_матриц_методом_Жордана_Гаусса
 {
-    public class Matrix :ICloneable
+    public class Matrix : ICloneable
     {
+        // Размеры матрицы по горизонтали (SizeX) и вертикали (SizeY).
+        // Установка этих значений через свойства с проверками.
         private int sizeX;
         private int sizeY;
-        public int SizeX {
-            get
-            {
-                return sizeX;
-            }
+
+        // Свойства для доступа к размерам матрицы с проверкой на минимальный размер (>=2).
+        public int SizeX
+        {
+            get => sizeX;
             private set
             {
                 if (value < 2)
@@ -24,12 +26,10 @@ namespace Решение_матриц_методом_Жордана_Гаусса
                 sizeX = value;
             }
         }
+
         public int SizeY
         {
-            get
-            {
-                return sizeY;
-            }
+            get => sizeY;
             private set
             {
                 if (value < 2)
@@ -39,9 +39,12 @@ namespace Решение_матриц_методом_Жордана_Гаусса
                 sizeY = value;
             }
         }
-        public double[][] Values { get; set; }
-        public double[] X { get; }
 
+        // Двумерный массив значений матрицы и одномерный массив вектора свободных членов.
+        public double[][] Values { get; set; }
+        public double[] X { get; } // Вектор свободных членов
+
+        // Конструктор, создающий матрицу с заданными размерами и инициализацией пустыми значениями.
         public Matrix(int sizeX, int sizeY)
         {
             this.SizeX = sizeX;
@@ -50,18 +53,21 @@ namespace Решение_матриц_методом_Жордана_Гаусса
             this.X = new double[sizeY];
             for (int i = 0; i < sizeY; i++)
             {
-                this.Values[i] = new double[sizeX];
+                this.Values[i] = new double[sizeX]; // Инициализация строк матрицы
             }
         }
+
+        // Конструктор, создающий матрицу с заданными значениями.
         public Matrix(int sizeX, int sizeY, double[][] values)
         {
             this.SizeX = sizeX;
             this.SizeY = sizeY;
-            Values = new double[sizeY][];
+            this.Values = new double[sizeY][];
 
             int maxY = sizeY;
             int maxX = sizeX;
 
+            // Проверка на длину переданных значений
             if (values[0].Length < sizeX)
             {
                 maxX = values[0].Length;
@@ -71,6 +77,7 @@ namespace Решение_матриц_методом_Жордана_Гаусса
                 maxY = values.Length;
             }
 
+            // Инициализация значений матрицы
             for (int i = 0; i < maxY; i++)
             {
                 this.Values[i] = new double[sizeX];
@@ -80,13 +87,16 @@ namespace Решение_матриц_методом_Жордана_Гаусса
                 }
             }
         }
+
+        // Конструктор, принимающий значения матрицы и вектора свободных членов
         public Matrix(int sizeX, int sizeY, double[][] values, double[] x)
         {
             this.SizeX = sizeX;
             this.SizeY = sizeY;
-            Values = new double[sizeY][];
-            X = new double[sizeY];
+            this.Values = new double[sizeY][];
+            this.X = new double[sizeY];
 
+            // Заполнение матрицы значениями и вектора свободных членов
             for (int i = 0; i < sizeY; i++)
             {
                 this.X[i] = x[i];
@@ -98,39 +108,47 @@ namespace Решение_матриц_методом_Жордана_Гаусса
             }
         }
 
+        // Проверяет, существует ли вектор свободных членов.
         public bool IsHaveX()
         {
-            return (X != null) ? true : false;
+            return (X != null);
         }
+
+        // Проверяет, квадратная ли матрица (SizeX == SizeY).
         public bool IsSquareMatrix()
         {
             return SizeX == SizeY;
         }
 
+        // Индексатор для доступа к значениям матрицы.
         public double this[int keyX, int keyY]
         {
             get => Values[keyX][keyY];
             set => Values[keyX][keyY] = value;
         }
-        public override string ToString()
+
+        // Переопределение метода ToString() для вывода матрицы в текстовом виде.
+        public override String ToString()
         {
             var sb = new StringBuilder();
-
             for (int i = 0; i < SizeY; i++)
             {
                 for (int j = 0; j < SizeX; j++)
                 {
-                    sb.Append(Convert.ToString(Math.Round(Values[i][j], 3)));
+                    sb.Append(Convert.ToString(Math.Round(Values[i][j], 3))); // Округление значений
                     sb.Append("\t");
                 }
-                sb.AppendLine();
+                sb.AppendLine(); // Новая строка после каждой строки матрицы
             }
             return sb.ToString();
         }
 
+        // Метод Clone() для создания копии матрицы.
         public object Clone()
         {
-            return new Matrix(sizeX, sizeY, Values, X);
+            return new Matrix(SizeX, SizeY, Values, X);
         }
     }
+
+
 }

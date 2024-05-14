@@ -48,7 +48,7 @@ namespace Решение_матриц_методом_Жордана_Гаусса
             matrixTextBoxArray = new TextBox[matrixSize, matrixSize];
             XTextBoxArray = new TextBox[matrixSize];
             matrixLabels = new Label[matrixSize, matrixSize];
-            var BiasOfTB = new Point(12, 265);
+            var BiasOfTB = new Point(MatrixSizeLabel.Location.X, MatrixSizeLabel.Location.Y + MatrixSizeLabel.Height + 13);
             for (int i = 0; i < matrixSize; i++)
             {
                 for (int j = 0; j < matrixSize; j++)
@@ -132,24 +132,35 @@ namespace Решение_матриц_методом_Жордана_Гаусса
 
         private void SolveButton_Click(object sender, EventArgs e)
         {
+            // Проверка, валидны ли введенные данные
             if (!IsValidMatrixInput())
             {
-                return;
+                return; // Если данные недействительны, выход из функции
             }
 
+            // Создаем объект Matrix размером matrixSize x matrixSize
             Matrix matrix = new Matrix(matrixSize, matrixSize);
+
+            // Заполняем матрицу коэффициентов и вектор свободных членов
             for (int i = 0; i < matrixSize; i++)
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    matrix[i, j] = Convert.ToDouble(matrixTextBoxArray[i, j].Text, CultureInfo.InvariantCulture);
+                    // Конвертируем строковое значение в число, учитывая русскую локализацию (точка или запятая)
+                    matrix[i, j] = Convert.ToDouble(matrixTextBoxArray[i, j].Text.Replace('.', ','), new CultureInfo("ru"));
                 }
-                matrix.X[i] = Convert.ToDouble(XTextBoxArray[i].Text, CultureInfo.InvariantCulture);
+
+                // Заполняем вектор свободных членов
+                matrix.X[i] = Convert.ToDouble(XTextBoxArray[i].Text, new CultureInfo("ru"));
             }
 
+            // Создаем объект MatrixSolver для решения системы линейных уравнений
             MatrixSolver matrixSolver = new MatrixSolver(matrix);
+
+            // Решаем систему линейных уравнений методом Гаусса
             var result = matrixSolver.Solve();
         }
+
 
         private void открытьИзФайлаToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -163,30 +174,39 @@ namespace Решение_матриц_методом_Жордана_Гаусса
         }
         private bool IsValidMatrixInput()
         {
+            // Проверка всех текстовых полей для вектора свободных членов
             for (int i = 0; i < matrixSize; i++)
             {
+                // Если поле пустое или содержит только точку, выводим сообщение об ошибке
                 if (string.IsNullOrEmpty(XTextBoxArray[i].Text) || XTextBoxArray[i].Text == ".")
                 {
                     MessageBox.Show("Не все поля заполнены.");
-                    return false;
+                    return false; // Возвращаем false, чтобы указать на недействительные данные
                 }
+
+                // Проверка текстовых полей для матрицы коэффициентов
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    if (string.IsNullOrEmpty(matrixTextBoxArray[i, j].Text) || matrixTextBoxArray[i,j].Text == ".")
+                    if (string.IsNullOrEmpty(matrixTextBoxArray[i, j].Text) || matrixTextBoxArray[i, j].Text == ".")
                     {
                         MessageBox.Show("Не все поля заполнены.");
                         return false;
                     }
                 }
             }
+
+            // Если все поля заполнены корректно, возвращаем true
             return true;
         }
+
 
         private void InputByUserButton_Click(object sender, EventArgs e)
         {
             MatrixSizeLabel.Visible = true;
             MatrixSizeUpDown.Visible = true;
             SolveButton.Visible = true;
+            SaveButton.Visible = true;
+
             MatrixSizeUpDown_ValueChanged(this, new EventArgs());
 
         }
@@ -207,7 +227,6 @@ namespace Решение_матриц_методом_Жордана_Гаусса
             {
                 return;
             }
-            //MessageBox.Show(pathToFile);
 
             using (StreamWriter sw = new StreamWriter(pathToFile))
             {
@@ -246,7 +265,6 @@ namespace Решение_матриц_методом_Жордана_Гаусса
             {
                 return;
             }
-            MessageBox.Show(pathToFile);
 
             bool IsValidFile = true;
 
@@ -306,7 +324,7 @@ namespace Решение_матриц_методом_Жордана_Гаусса
                 {
                     for (int j = 0; j < matrixSize; j++)
                     {
-                        if (!Double.TryParse(stringValuesArray[i * matrixSize + j], NumberStyles.Any, CultureInfo.InvariantCulture, out valuesArray[i, j]))
+                        if (!Double.TryParse(stringValuesArray[i * matrixSize + j], NumberStyles.Any, new CultureInfo("en"), out valuesArray[i, j]))
                         {
                             IsValidFile = false;
                         }
@@ -339,7 +357,7 @@ namespace Решение_матриц_методом_Жордана_Гаусса
 
                 for (int i = 0; i < matrixSize; i++)
                 {
-                    if (!Double.TryParse(solutionsStringArray[i], NumberStyles.Any, CultureInfo.InvariantCulture, out solutionsArray[i]))
+                    if (!Double.TryParse(solutionsStringArray[i], NumberStyles.Any, new CultureInfo("en"), out solutionsArray[i]))
                     {
                         IsValidFile = false;
                     }
@@ -374,5 +392,12 @@ namespace Решение_матриц_методом_Жордана_Гаусса
         {
             LoadMatrixFile();
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveMatrixFile(matrixSize, matrixTextBoxArray, XTextBoxArray);
+        }
+
+        
     }
 }
